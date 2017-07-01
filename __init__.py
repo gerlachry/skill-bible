@@ -59,13 +59,9 @@ class BibleAudioSkill(MycroftSkill):
         self.register_intent(intent, self.handle_intent)
 
     def handle_intent(self, message):
-        LOGGER.info('bible message: {0}'.format(message.serialize()))
         book = message.data.get('Books', None)
-        LOGGER.info('book: {0}'.format(book))
         chapter = message.data.get('Chapters', None)
-        LOGGER.info('chapter: {0}'.format(chapter))
         verse = message.data.get('Verses', None)
-        LOGGER.info('verse  : {0}'.format(verse))
 
         if not book:
             passage = self.default_passage
@@ -83,11 +79,9 @@ class BibleAudioSkill(MycroftSkill):
         try:
             params = urllib.urlencode({self.api_format_key: self.api_format_value,
                                        self.api_passage_key: passage})
-            LOGGER.info('bible url: {0}'.format(self.url_mp3 % params))
             self.speak_dialog('bible.audio')
             # Pause for the intro, then start the new stream
             time.sleep(4)
-            LOGGER.info('start bible mp3')
             self.process = play_mp3(self.url_mp3 % params)
 
         except Exception as e:

@@ -1,4 +1,7 @@
-# Spelling Skill
+# Audio Bible Skill
+Uses the ESV.  http://www.esvapi.org/api
 
 ## Usage:
-* `spell Mycroft`
+* `play bible`
+* `play bible john chapter 4`
+* `play bible john chapter 4 verse 3`
