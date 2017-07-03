@@ -9,7 +9,6 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.util import play_mp3
 from mycroft.util.log import getLogger
-from mycroft.skills.scheduled_skills import ScheduledCRUDSkill
 
 __author__ = 'gerlachry'
 
